@@ -36,7 +36,7 @@ public class LoginPage extends AppAction {
 
     public void loginWithMobileNumber() throws InterruptedException {
         click(signIn());
-        EnterValue(mobileNumber(),"9538967218");
+        EnterValue(mobileNumber(),"**********");
         EnterValue(passwordTextBox("0"),"5");
         EnterValue(passwordTextBox("1"),"9");
         EnterValue(passwordTextBox("2"),"5");
