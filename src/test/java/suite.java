@@ -12,13 +12,13 @@ import java.net.MalformedURLException;
 public class suite {
 
     public String getPath() {
-        String path;
+        String NewApkpath;
         if (System.getProperty("LatestApk.apk") != null) {
-            path = new File("LatestApk.apk").getAbsolutePath();
+            NewApkpath = new File("LatestApk.apk").getAbsolutePath();
         }else {
-            path = "/Users/yash.zanwar/Desktop/phonepeapp-developers-stage-debug.apk";
+            NewApkpath = "/Users/yash.zanwar/Desktop/phonepeapp-developers-stage-debug.apk";
         }
-        return path;
+        return NewApkpath;
     }
 
     @Test(groups = "sanity")

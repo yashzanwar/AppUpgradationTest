@@ -26,14 +26,14 @@ public class FrameWork {
 
 
     public String getPath() {
-        String path;
+        String oldApkPath;
         if (System.getProperty("OldApk.apk") != null) {
-            path = new File("OldApk.apk").getAbsolutePath();
-            System.out.println(path);
+            oldApkPath = new File("OldApk.apk").getAbsolutePath();
+            System.out.println(oldApkPath);
         } else {
-            path = "/Users/yash.zanwar/Desktop/phonepeapp-developers-stage-universal-debug.apk";
+            oldApkPath = "/Users/yash.zanwar/Desktop/phonepeapp-developers-stage-universal-debug.apk";
         }
-        return path;
+        return oldApkPath;
     }
 
 
@@ -45,7 +45,6 @@ public class FrameWork {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "HNB3W8Y0");
-        //capabilities.setCapability("noSign","true");
         capabilities.setCapability(AndroidMobileCapabilityType.NO_SIGN, false);
         capabilities.setCapability("newCommandTimeout", 45000);
         capabilities.setCapability("autoGrantPermissions", "true");
@@ -54,19 +53,14 @@ public class FrameWork {
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.phonepe.app.ui.activity.Navigator_MainActivity");
         AndroidDriver driver = new AndroidDriver(new URL(appiumServiceUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        /*driver.removeApp("com.phonepe.app");
-        driver.installApp(APP_V1_0_0);
-        driver.launchApp();*/
         return driver;
     }
-
 
     public AppiumDriverLocalService getAppiumDriverLocalService() {
         AppiumDriverLocalService appiumService = AppiumDriverLocalService.buildDefaultService();
         appiumService.start();
         return appiumService;
     }
-
 
     public String getAttachedDevices() {
 
