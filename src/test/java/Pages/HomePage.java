@@ -30,7 +30,7 @@ public class HomePage extends AppAction {
     /************************************************** Methods **********************************************************************/
 
     public void navigateSendMoney(){
-        if(waitUntilDisplayed(collectPopUp(),5)){
+        if(waitUntilDisplayed(collectPopUp(),10)){
             click(cancelCollect());
         }
         click(sendMoney());

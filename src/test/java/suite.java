@@ -16,7 +16,7 @@ public class suite {
         if (System.getProperty("LatestApk.apk") != null) {
             path = new File("LatestApk.apk").getAbsolutePath();
         }else {
-            path = "/Users/yash.zanwar/Desktop/phonepeapp-developers-stage-debug1.apk";
+            path = "/Users/yash.zanwar/Desktop/phonepeapp-developers-stage-debug.apk";
         }
         return path;
     }
