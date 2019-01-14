@@ -123,6 +123,7 @@ public class FrameWork {
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
+        System.out.println(System.getProperty("test"));
         unInstallExistingAppIfAny();
         installApp(getPath());
     }
